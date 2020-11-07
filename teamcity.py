@@ -122,9 +122,9 @@ class CallbackModule(DefaultModule):
         if ignore_errors:
             status = u"WARNING"
         
-        self._display.display(u"##teamcity[message text='Error running task %s' status='%s']" % (self._format(result._task.name), self._format(status)))
+        self._display.display(u"##teamcity[message text='Error running task |'%s|'' status='%s']" % (self._format(result._task.name), self._format(status)))
 
         if not ignore_errors:
-            self._display.display(u"##teamcity[buildProblem description='Failure running task' identity='AnsibleTaskError']")
+            self._display.display(u"##teamcity[buildProblem description='Failure running task |'%s|'' identity='AnsibleTaskError']" % (self._format(result._task.name)))
         
         super(CallbackModule, self).v2_runner_on_failed(result, ignore_errors)
