@@ -3,7 +3,7 @@ from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 DOCUMENTATION = '''
-    callback: teamcity
+    callback: teamcity-yaml
     type: stdout
     short_description: Ansible output suitable for TeamCity
     version_added: 0.1.0-feature-alternative-base-callbacks
@@ -16,7 +16,7 @@ DOCUMENTATION = '''
 '''
 
 from ansible import constants as C
-from ansible.plugins.callback.default import CallbackModule as DefaultModule
+from ansible.plugins.callback.yaml import CallbackModule as DefaultModule
 
 class CallbackModule(DefaultModule):
 

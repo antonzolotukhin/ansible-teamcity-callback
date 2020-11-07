@@ -16,7 +16,7 @@ DOCUMENTATION = '''
 '''
 
 from ansible import constants as C
-from ansible.plugins.callback.default import CallbackModule as DefaultModule
+from ansible.plugins.callback.debug import CallbackModule as DefaultModule
 
 class CallbackModule(DefaultModule):
 
